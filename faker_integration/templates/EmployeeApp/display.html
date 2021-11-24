@@ -1,0 +1,36 @@
+{% extends 'firstapp/base.html' %}
+
+{% block title %}
+    <title>Display Record</title>
+{% endblock %}
+
+{% block content %}
+    <h1 style="text-align:center;">Employees Record</h1>
+    <div class="container">
+        <table class="table table-dark" style="width:80%">
+             <tr>
+                 <th>EmpId</th>
+                 <th>First Name</th>
+                 <th>Last Name</th>
+                 <th>Date Of Birth</th>
+                 <th>Email</th>
+                 <th>Address</th>
+                 <th>Phone</th>
+
+             </tr>
+             {% for emp in employees %}
+                   <tr>
+                       <td>{{emp.eid}}</td>
+                       <td>{{emp.efnm}}</td>
+                       <td>{{emp.elnm}}</td>
+                       <td>{{emp.edob}}</td>
+                       <td>{{emp.email}}</td>
+                       <td>{{emp.eaddr}}</td>
+                       <td>{{emp.ephone}}</td>
+
+                   </tr>
+             {% endfor %}
+        </table>
+   </div>
+
+{% endblock %}
